@@ -1,0 +1,29 @@
+﻿<Window x:Class="UserLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserLog"
+        mc:Ignorable="d"
+        Title="Вход в  систему" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name="tbLogin" Margin="5" />
+            <Label Margin="5,1,5,5" Content="Логин" HorizontalAlignment="Center"/>
+
+            <TextBox x:Name="tbPassword" Margin="5" />
+            <Label Margin="5,1,5,5" Content="Логин" HorizontalAlignment="Center"/>
+
+            <Button x:Name="btIn" Content="Войти" Margin="5" Click="btIn_Click" />
+            <Button x:Name="btReg" Content="Зарегестрироваться" 
+                    Margin="5" Click="btReg_Click"/>
+
+            <Button x:Name="btLog" Content="Просмотреть логи"  Margin="5"
+                    Click="btLog_Click" Visibility="Hidden" 
+                    />
+
+
+        </StackPanel>
+        
+    </Grid>
+</Window>
