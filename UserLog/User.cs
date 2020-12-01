@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace UserLog
 {
+
+    [Serializable]
     public class User
     {
         public string Login { get; private set; }
@@ -21,7 +23,7 @@ namespace UserLog
             BirthDay = birthDay;
         }
 
-        public User()
+        public User() /// Для  создания  случайного  пользователя 
         {
             Random random = new Random();
             Login = "NoName" +random.Next(0,10000).ToString();
