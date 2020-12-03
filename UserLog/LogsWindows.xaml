@@ -1,0 +1,32 @@
+﻿<Window x:Class="UserLog.LogsWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserLog"
+        mc:Ignorable="d"
+        Title="LogsWindows" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgLogs" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Имя пользователя" Binding="{Binding User.Name }" />
+                
+                <DataGridTextColumn 
+                    Header="Дата входа" Binding="{Binding DateTimeIn }"  />
+                
+                <DataGridTextColumn
+                    Header="Статус" Binding="{Binding Status }" />
+                
+                <DataGridTextColumn 
+                    Header="Неверный ввод логина" Binding="{Binding BedLogin }" />
+                
+                <DataGridTextColumn
+                    
+                    Header="Неверный вход пароля" Binding="{Binding BedPassword }" />
+            
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </Grid>
+</Window>

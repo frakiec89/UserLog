@@ -55,11 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LogServer.cs" />
+    <Compile Include="LogServerController.cs" />
+    <Compile Include="LogsWindows.xaml.cs">
+      <DependentUpon>LogsWindows.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegistUserWindow.xaml.cs">
       <DependentUpon>RegistUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserController.cs" />
+    <Page Include="LogsWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

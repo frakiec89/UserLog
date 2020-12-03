@@ -45,8 +45,6 @@ namespace UserLog
             }
 
             MessageBox.Show("неверный логин  или пароль");
-
-
         }
 
         /// <summary>
@@ -60,9 +58,15 @@ namespace UserLog
             regist.ShowDialog();
         }
 
+        /// <summary>
+        /// открывает  форму  с логами
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btLog_Click(object sender, RoutedEventArgs e)
         {
-
+            LogsWindows windows = new LogsWindows();
+            windows.ShowDialog();
         }
     }
 }
