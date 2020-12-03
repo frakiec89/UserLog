@@ -27,12 +27,37 @@ namespace UserLog
 
         private void btIn_Click(object sender, RoutedEventArgs e)
         {
+            UserController controller = new UserController();
+
+            List<User> users = controller.Users; // ТУТ  НАШИ ПОЛЬЗОВАТЕЛИ 
+
+            for (int i = 0; i < users.Count; i++)
+            {
+                if(
+                    users[i].Password == tbPassword.Text &&
+                    users[i].Login == tbLogin.Text 
+                  )
+                {
+                    MessageBox.Show("Привет " + users[i].Name);
+                    btLog.Visibility = Visibility.Visible; // Кнопку  видимой 
+                    return;
+                }
+            }
+
+            MessageBox.Show("неверный логин  или пароль");
+
 
         }
 
+        /// <summary>
+        /// Открывает окно  регистрации
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btReg_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistUserWindow regist = new RegistUserWindow();
+            regist.ShowDialog();
         }
 
         private void btLog_Click(object sender, RoutedEventArgs e)
