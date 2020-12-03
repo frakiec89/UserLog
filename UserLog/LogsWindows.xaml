@@ -24,7 +24,11 @@
                 <DataGridTextColumn
                     
                     Header="Неверный вход пароля" Binding="{Binding BedPassword }" />
-            
+
+                <DataGridTextColumn
+                    
+                    Header="Физический адресс" Binding="{Binding Mac }" />
+
             </DataGrid.Columns>
         </DataGrid>
         

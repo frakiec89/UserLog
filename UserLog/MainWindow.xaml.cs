@@ -25,11 +25,18 @@ namespace UserLog
             InitializeComponent();
         }
 
+        /// <summary>
+        /// обрабатывает  аутинтефикацию 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btIn_Click(object sender, RoutedEventArgs e)
         {
             UserController controller = new UserController();
-
             List<User> users = controller.Users; // ТУТ  НАШИ ПОЛЬЗОВАТЕЛИ 
+
+            LogServerController logServerController = new LogServerController(); /// список  логов
+            LogServer newLogServer;  // новый вход
 
             for (int i = 0; i < users.Count; i++)
             {
@@ -38,11 +45,20 @@ namespace UserLog
                     users[i].Login == tbLogin.Text 
                   )
                 {
+
                     MessageBox.Show("Привет " + users[i].Name);
+
+                    newLogServer = new LogServer(users[i], DateTime.Now); // Создали новый  вход
+
+                    logServerController.Add(newLogServer); // записали  его  в  список ( в файл ) 
+
                     btLog.Visibility = Visibility.Visible; // Кнопку  видимой 
                     return;
                 }
             }
+
+            newLogServer = new LogServer(tbLogin.Text, tbPassword.Text, DateTime.Now); /// неудачный вход
+            logServerController.Add(newLogServer); // записали  его  в  список ( в файл ) 
 
             MessageBox.Show("неверный логин  или пароль");
         }
