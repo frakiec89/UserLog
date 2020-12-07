@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaseSerializable.cs" />
     <Compile Include="LogServer.cs" />
     <Compile Include="LogServerController.cs" />
     <Compile Include="LogsWindows.xaml.cs">
