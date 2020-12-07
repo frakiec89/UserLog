@@ -30,5 +30,11 @@ namespace UserLog
             Password = random.Next(0, 1000000).ToString();
             Name = "NoName";
         }
+
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

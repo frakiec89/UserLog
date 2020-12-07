@@ -53,6 +53,10 @@ namespace UserLog
                     logServerController.Add(newLogServer); // записали  его  в  список ( в файл ) 
 
                     btLog.Visibility = Visibility.Visible; // Кнопку  видимой 
+
+                    UsersWindow window = new UsersWindow();
+                    window.Show();
+
                     return;
                 }
             }
@@ -84,5 +88,7 @@ namespace UserLog
             LogsWindows windows = new LogsWindows();
             windows.ShowDialog();
         }
+
+       
     }
 }

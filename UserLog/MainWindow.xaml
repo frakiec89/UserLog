@@ -22,8 +22,14 @@
                     Click="btLog_Click" Visibility="Hidden" 
                     />
 
-
         </StackPanel>
-        
+
+
+       
+
+
+
+
+
     </Grid>
 </Window>
