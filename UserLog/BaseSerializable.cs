@@ -14,15 +14,44 @@ namespace UserLog
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (FileStream stream = new FileStream("Log.bin", FileMode.OpenOrCreate))
+            using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 try
                 {
-                    return formatter.Deserialize(stream) as List<LogServer>;
+                    object content = formatter.Deserialize(stream);
+                    
+                    if (  content ==null)
+                    {
+                        return default(T); 
+                    }
+                    else
+                    {
+                        return content as T;
+                    }
                 }
                 catch
                 {
-                    return new List<LogServer>();
+                 return default(T);
+                }
+                finally
+                {
+                    stream.Close();
+                }
+            }
+        }
+
+        public void Save<T>(string filePath, T t) where T : class
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream stream = new FileStream(filePath, FileMode.OpenOrCreate))
+            {
+                try
+                {
+                    formatter.Serialize(stream, t);
+                }
+                catch
+                {
+                    throw new Exception("Ошибка сохранения");
                 }
                 finally
                 {
@@ -30,12 +59,7 @@ namespace UserLog
                 }
             }
 
-
-
-
         }
-
-
 
 
     }
